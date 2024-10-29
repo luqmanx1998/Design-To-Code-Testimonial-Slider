@@ -1,0 +1,189 @@
+:root {
+    --darkblue: hsl(240, 38%, 20%);
+    --grayblue: hsl(240, 18%, 77%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Inter", serif;
+    font-size: 1.8rem;
+    /* padding: 5rem 3rem; */
+    color: var(--darkblue);
+    background-image: url("images/pattern-bg.svg"), url("images/pattern-curve.svg"), url("images/pattern-quotes.svg");
+    background-size: 86%, 80%, 15%;
+    background-repeat: no-repeat;
+    background-position: 38% 6%, -15% 58.7rem, 50% 35.8rem;
+    letter-spacing: 0.2px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    overflow: visible;
+}
+
+.section-slider {
+    max-width: 100vw; /* Prevents any overflow caused by content on large screens */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflowing slides */
+    width: 100%; 
+    height: 65rem;
+    max-height: 100vh; /* Optional, keep it within viewport height */
+    /* transition: all .3s; */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5rem 3.5rem;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.img-container {
+    max-width: 24rem;
+    height: 25rem;
+    margin: 0 auto;
+    margin-bottom: 8rem;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    overflow: visible !important;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.testimony {
+    line-height: 1.35;
+    /* font-weight: 300; */
+}
+
+.testimony-author {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Inter", serif;
+    font-style: normal;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.author-role {
+    color: var(--grayblue);
+}
+
+.btn-container {
+    display: flex;
+    background-color: white;
+    gap: 3rem;
+    border-radius: 20px;
+    padding: 1.5rem 1.5rem;
+    position: absolute;
+    top: 27.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: -18px 8px 16px -6px rgba(186,186,207,1);
+    cursor: pointer;
+}
+
+.btn {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background-size: 46%, 80%, 8%;
+        background-repeat: no-repeat;
+        background-position: 80% 45%, -55% 64.7rem, 21% 20.5rem;
+    }
+
+    .slider {
+        max-width: 114rem;
+        margin: 3.5rem auto;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+
+    }
+
+    .slide {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        /* padding-inline: 20rem; */
+    }
+
+    .img-container {
+        width: 54rem;
+        height: 54rem;
+        overflow: visible;
+        margin-bottom: 0;
+        margin-right: 18rem;
+        /* transform: translateX(0.2rem); */
+    }
+    
+    .text-container {
+        text-align: start;
+        width: 63rem;
+        z-index: 2;
+        margin-top: 8.5rem;
+        transform: translateX(-3.3rem); 
+    }
+
+    .testimony {
+        font-size: 3.2rem;
+        letter-spacing: 1.1px;
+        margin-bottom: 5rem;
+    }
+
+    .testimony-author {
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-container {
+        padding: 2.2rem 2rem;
+        border-radius: 30px;
+        gap: 4.5rem;
+        top: 59rem;
+        left: 58%;
+    }
+}
